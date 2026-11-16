@@ -12,7 +12,7 @@ function Quiz01() {
                 
                 setEven(even+2)   
                 console.log(even);
-            }}>count증가</button>
+            }}>짝수출력</button>
             <p style={{color : 'red'}}>{even}</p>
         </div>
     )
