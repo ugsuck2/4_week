@@ -1,7 +1,7 @@
 import shopData from './shopData'
 import {price1,price2,price3,product1,product2,product3} from './productData'
 
-
+let defaultExport = price1 + price2 + price3;
 
 function ProductInfo() {
     return(
@@ -18,7 +18,7 @@ function ProductInfo() {
             <h3>상품1 : {product3}</h3>
             <h3>가격 : {price3}</h3>  <br></br>
             <h3>------------------------------</h3>
-            <h1>총 상품 금액 : <span>{price1+price2+price3}</span></h1>
+            <h1>총 상품 금액 : <span>{defaultExport} 원</span></h1>
         </div>
     )
     }
