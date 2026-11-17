@@ -20,7 +20,7 @@ function ProductInfo() {
             <h3>------------------------------</h3>
             <h1>총 상품 금액 : <span>{defaultExport} 원</span></h1>
         </div>
-    )
+        )
     }
 
     export default ProductInfo;

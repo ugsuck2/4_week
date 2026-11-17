@@ -14,8 +14,8 @@ function Quiz02() {
     return(
         <div style={{display:'flex',alignItems:'center',flexDirection:'column'}}>
             <p  className="center">{arrNum[num]}</p>
-            <button onClick={()=>{
-                setNum((num+1)%3)
+            <button onClick={()=>{  
+                setNum((num+1)%arrNum.length)
                 num = arrNum[i+1]
 
 
