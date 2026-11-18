@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import Gs09 from './practice/Gs09.jsx'
+import Prac6 from './practice/261118/Prac6'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Gs09 />
+    <Prac6 />
   </StrictMode>,
 )
