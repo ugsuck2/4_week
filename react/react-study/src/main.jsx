@@ -7,11 +7,11 @@ import './index.css'
 // import Quiz03 from './quiz03/Quiz03.jsx'
 // import Props01 from './components/Props01'
 // import TempApp from './TempApp.jsx'
-import Quiz04_2 from './quiz/quiz04/Quiz04_2.jsx'
+import Quiz04 from './quiz/quiz04/Quiz04.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Quiz04_2/>
+    <Quiz04/>
     {/* <Quiz01 /> */}
     {/* <ProductInfo /> */}
     {/* <TempApp /> */}

@@ -26,6 +26,14 @@ function Quiz04() {
                 <div style={{display:'flex' , flexWrap : 'wrap'}}>
                 {boxCount}
                 </div>
+
+                <div>
+                    {
+                        [...Array(boxState)].map(( _ ,index)=>{
+                            return <div className='box' key={index}>박스</div>
+                        })
+                    }
+                </div>
                 
             </div>
             )
