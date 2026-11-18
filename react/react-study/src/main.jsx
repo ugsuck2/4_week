@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import Quiz01 from './quiz01/Quiz01.jsx'
+// import Quiz01 from './quiz01/Quiz01.jsx'
 import NewsBlog from './newsblog/NewsBlog.jsx'
 // import Props02 from './components/Props02.jsx'
 // import Quiz03 from './quiz03/Quiz03.jsx'

@@ -15,7 +15,7 @@ function NewsBlog() {
 
     const [news, setNews] = useState(['어제의 뉴스','오늘의 뉴스','내일의 뉴스'])
 
-    const [likeCount, setLikeCount] = useState(0);
+    const [likeCount, setLikeCount] = useState([0,0,0]);
 
     const [modalFlag, setModalFlag] = useState(false);
 
@@ -27,7 +27,36 @@ function NewsBlog() {
                 <div style={{color:"orange",fontSize:'20px'}}>React Study</div>
             </div>
 
-            <div className="post-list">
+        {
+        news.map((item, index)=>{
+                return(
+                    <div className="post-list" key={index}>
+                        <h4 onClick={()=>{
+                            setModalFlag(!modalFlag);
+                        }}>
+                            {item}
+
+                            <span onClick={(event)=>{
+                                event.stopPropagation();
+
+                                let temp = [...likeCount];
+                                temp[index] = temp[index] + 1;
+                                setLikeCount(temp);
+                            }}>
+                                ♥
+                            </span>
+
+                            {likeCount[index]}
+                        </h4>
+
+                        <p>내용</p>
+                    </div>
+                );
+            })
+        }       
+                    
+
+            {/* <div className="post-list">
                 <h4 onClick={()=>{
                     //modalFlag 값 변경
                     // setModalFlag(true);
@@ -57,7 +86,7 @@ function NewsBlog() {
             <div className="post-list">
                 <h4>{news[2]}</h4>
                 <p>내용</p>
-            </div>
+            </div> */}
             
             
                 {/* modalFlag == true ?  <Modal/> : null */}
