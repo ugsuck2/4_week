@@ -24,6 +24,9 @@ function NewsBlog() {
 
     let [selectedLikeCount, setSelectedLikeCount] = useState(0);
 
+    // input 요소에서 입력된 값을 저장하는 용도
+    let [inputText, setInputText] = useState('')
+
 
 
     return(
@@ -108,7 +111,28 @@ function NewsBlog() {
             
             
                 {/* modalFlag == true ?  <Modal/> : null */}
-            
+            <div>
+                <input type="text" value={inputText} onChange={(event)=>{
+        // 매개변수 event : 키보드 이벤트정보
+        // event.target 이벤트가 발생한 요소 접근
+
+        // input 창에서 입력발생 -> onchange 이벤트에 등록된 함수 수행
+        // -> value값을 state변수에 저장해둠
+
+        // input에서 입력되어 저장된 state변수값 -> news배열에 추가등록
+        //  -> 재랜더링+화면에표시
+                    console.log(event.target.value);
+                    setInputText(event.target.value);
+                    
+
+                }}/>
+                <button onClick={()=>{
+                    let temp = [...news];
+                    temp.push(inputText);
+                    setNews(temp);
+                    setInputText('') // 입력값 저장하는 inputText를 초기화
+                }}>뉴스발행</button>
+            </div>
 
             {
                 modalFlag && <Modal title={selectedTitle} likeCount={selectedLikeCount}
