@@ -13,7 +13,14 @@ import food1 from './img/food1.jpg';
 import food2 from './img/food2.jpg';
 import food3 from './img/food3.jpg';
 
+import foodsData from './data/foodsData';
+
+import { useState } from 'react';
+import FoodCard from './components/FoodCard';
+
 function FoodMarket() {
+
+    let [food, setFoods] = useState(foodsData);
 
     return(
         <div>
@@ -42,6 +49,25 @@ function FoodMarket() {
             React 컴포넌트 방식에서 이미지 사용시
             1. import 이미지
             2. 외부 이미지 url 경로
+            3. css 에서 이미지 경로
+                url(./img/banner_bg.jpg);
+
+            4. public 폴더에 이미지를 미리 저장해두고 접근/사용
+            현재 실행중인 서버에 public 경로를 통해 image 접근 가능
+            서버가 외부 url 이미지에 접근하듯이 해당 서버 역할
+            
+            '주소' /images/food3.jpg
+
+            현재 접속한 사이트 주소 + 뒤에 경로
+
+            패키지 매니저 별로 설정이 다름
+
+            CRA : src={ process.env.PUBLIC_URL + food.imgPath }
+                설정: package.json
+                    "homepage" 
+            VITE : src= { import.meta.env.BASE_URL + food.imgPath}
+                설정은 vite.config.js 에 있는 base에 따른다. 
+
 
         */}
 
@@ -50,17 +76,50 @@ function FoodMarket() {
 
 
             <div className='main-bg'></div>  
+
+            <Container>
+
+                <Row>
+                    {
+                        food.map((food,index)=>{
+                            return(
+                                <Col md={4} sm={4} xxl={3} key={index}>
+                                    <FoodCard food={food} index={index} />
+                                </Col>    
+                            )
+                        })
+                    }
+
+                </Row>
+
+
+            </Container>
+
+
+
+
+
+
+
+
+
+
+
+
+
             {/* bootstrap 한줄 기준 : 12 */}
-            <Container fluid="md">
+            {/* <Container fluid="md">
             <Row>
                 <Col md={4} sm={4} xxl={3}>
                                 <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={food1} />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>{food[0].title}</Card.Title>
                     <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                    {food[0].content}
+                    </Card.Text>
+                    <Card.Text>
+                    {food[0].price}
                     </Card.Text>
                     <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
@@ -71,10 +130,12 @@ function FoodMarket() {
                             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={food2} />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>{food[1].title}</Card.Title>
                     <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                    {food[1].content}
+                    </Card.Text>
+                    <Card.Text>
+                    {food[1].price}
                     </Card.Text>
                     <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
@@ -85,17 +146,19 @@ function FoodMarket() {
                             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={food3} />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>{food[2].title}</Card.Title>
                     <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                    {food[2].content}
+                    </Card.Text>
+                    <Card.Text>
+                    {food[2].price}
                     </Card.Text>
                     <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
                 </Card>
                 </Col>
             </Row>
-            </Container>
+            </Container> */}
 
 
 
