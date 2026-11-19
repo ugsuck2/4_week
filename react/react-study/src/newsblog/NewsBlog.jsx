@@ -91,7 +91,7 @@ function NewsBlog() {
                             //     setLikeCount(temp2);
                             // })
 
-                            setLikeCount(likeCount.filter((_,idx)=> idx != index));
+                            // setLikeCount(likeCount.filter((_,idx)=> idx != index));
                         }}>삭제</button>
                     </div>
                 );

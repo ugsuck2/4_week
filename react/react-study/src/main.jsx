@@ -8,10 +8,12 @@ import NewsBlog from './newsblog/NewsBlog.jsx'
 // import Props01 from './components/Props01'
 // import TempApp from './TempApp.jsx'
 import Quiz05 from './quiz/quiz05/Quiz05.jsx'
+import FoodMarket from './foodmarket/FoodMarket.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <NewsBlog></NewsBlog>
+    <FoodMarket></FoodMarket>
+    {/* <NewsBlog></NewsBlog> */}
     {/* <Quiz01 /> */}
     {/* <ProductInfo /> */}
     {/* <TempApp /> */}
