@@ -63,7 +63,36 @@ function NewsBlog() {
                             {likeCount[index]}
                         </h4>
 
-                        <p>내용</p>
+                        <p>내용 무</p>
+                        <button onClick={()=>{
+                            let temp = [...news];
+                            temp.splice(index,1); // splice는 파괴적 함수라 temp = temp.splice(index,1)쓰면 안된다.
+                            setNews(temp);
+                            // let countTemp = [...likeCount];
+                            // countTemp.splice(index,1);
+                            // setLikeCount(countTemp);
+                            likeCount.splice(index,1)
+
+                            // filter 방식
+                            // return 조건이 true 인 케이스만 모아서 배열
+                            // index : 2요소만 삭제버튼 -> 0!=2 1!=2 2!=2 3!=2
+                            // 현재index != 삭제누른index
+
+                            let filterTemp = [...news];
+                            filterTemp.filter((value,idx)=>{  // 최종결과 [1,2,3,4]
+                                return idx != index; // return true만 모아서
+                            })
+                            console.log(filterTemp);
+                            setNews[filterTemp];
+
+                            // let temp2 = [...likeCount];
+                            // temp2 = temp2.filter((value,idx)=>{
+                            //     return idx != index;
+                            //     setLikeCount(temp2);
+                            // })
+
+                            setLikeCount(likeCount.filter((_,idx)=> idx != index));
+                        }}>삭제</button>
                     </div>
                 );
             })
