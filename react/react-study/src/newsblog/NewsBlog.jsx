@@ -51,6 +51,7 @@ function NewsBlog() {
 
                             <span onClick={(event)=>{
                                 event.stopPropagation();
+                                
 
                                 let temp = [...likeCount];
                                 temp[index] = temp[index] + 1;
@@ -127,14 +128,37 @@ function NewsBlog() {
 
                 }}/>
                 <button onClick={()=>{
-                    let temp = [...news];
-                    temp.push(inputText);
-                    setNews(temp);
-                    setInputText('') // 입력값 저장하는 inputText를 초기화
+
+                    //문자 앞뒤에 있는 공백(띄어쓰기) 제거
+                    //띄어쓰기만 있을때 등록을 방지
+                    //trim() : 문자열 앞뒤에 있는 공백을 제거
+
+                    //" ab c d " .trim()  --> "abcd"
+
+                    inputText = inputText.trim();  // 비파괴적 함수라 원본에 저장안됨
+                    
+                    
+                    if(inputText !== '' ){
+                        let temp = [...news];
+                        temp.push(inputText);
+                        setNews(temp);
+                        let likeCountTemp = [...likeCount];
+                        likeCountTemp.push(0)
+                        setLikeCount(likeCountTemp);  
+                        // 근처에 랜더링하는 조건들이 있으므로 굳이 temp로 배열 안만들어도 된다.
+
+                        setInputText('') // 입력값 저장하는 inputText를 초기화
+                    }
+                    else{
+                        alert('값을 입력하세요!')
+                        setInputText('')  // 텍스트창에 남아있는 띄어쓰기를 제거
+                    }
                 }}>뉴스발행</button>
             </div>
 
             {
+                
+
                 modalFlag && <Modal title={selectedTitle} likeCount={selectedLikeCount}
                                     news={news} setNews={setNews} bgcolor='lightblue'/>
 
