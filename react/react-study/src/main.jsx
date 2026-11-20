@@ -10,6 +10,7 @@ import NewsBlog from './newsblog/NewsBlog.jsx'
 // import Quiz05 from './quiz/quiz05/Quiz05.jsx'
 import FoodMarket from './foodmarket/FoodMarket.jsx'
 import Quiz06 from './quiz/quiz06/Quiz06.jsx'
+import {BrowserRouter} from 'react-router'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,6 +19,10 @@ createRoot(document.getElementById('root')).render(
     {/* <Quiz01 /> */}
     {/* <ProductInfo /> */}
     {/* <TempApp /> */}
-    <Quiz06></Quiz06>
+    {/* <Quiz06></Quiz06> */}
+    <BrowserRouter>
+      <FoodMarket></FoodMarket>
+    
+    </BrowserRouter>
   </StrictMode>,
 )
