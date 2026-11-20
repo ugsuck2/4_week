@@ -20,6 +20,7 @@ import FoodCard from './components/FoodCard';
 import { Routes ,Route,Link, useNavigate } from 'react-router';
 import CustomerService from './pages/CustomerService';
 import Home from './pages/Home';
+import Detail from './pages/Detail';
 
 
 
@@ -67,6 +68,7 @@ function FoodMarket() {
         <Routes>
             <Route path='/' element={<Home foods = {food}/>} />
             <Route path='/help' element={<CustomerService/>}/>
+            <Route path='/detail/:id' element={<Detail foods={food}/>}/>
             <Route path='/detail' element={<div><h1>Detail Page</h1></div>}/>
             <Route path='/info' element={<div><h1>Info Page</h1></div>}/>
             <Route path='/test' element={<div><h1>이곳은 테스트</h1></div>}/>

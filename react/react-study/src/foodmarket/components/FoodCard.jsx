@@ -2,8 +2,11 @@ import { Button, Card } from "react-bootstrap";
 import food1 from '../img/food1.jpg';
 import food2 from '../img/food2.jpg';
 import food3 from '../img/food3.jpg';
+import { useNavigate} from 'react-router'
 
 function FoodCard({food}) {
+
+    let navigate = useNavigate();
 
     
 
@@ -23,6 +26,14 @@ function FoodCard({food}) {
                         <Card.Text>
                         {food.price}
                         </Card.Text>
+                        <Button variant="primary"
+                        onClick={()=>{
+                            // 상품 상세페이지 주소로 변환
+                            // detail/:id
+                            navigate('/detail/' + food.id)
+                        }}>
+                            상세보기
+                        </Button>
                 </Card.Body>
         </Card>
     )
