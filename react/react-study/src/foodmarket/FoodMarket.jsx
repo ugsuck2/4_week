@@ -66,10 +66,10 @@ function FoodMarket() {
         
         <Routes>
             <Route path='/' element={<Home foods = {food}/>} />
-            <Route path='/help' element={<CustomerService/>}></Route>
-            <Route path='/detail' element={<div><h1>Detail Page</h1></div>}></Route>
-            <Route path='/info' element={<div><h1>Info Page</h1></div>}></Route>
-            <Route path='/test' element={<div><h1>이곳은 테스트</h1></div>}></Route>
+            <Route path='/help' element={<CustomerService/>}/>
+            <Route path='/detail' element={<div><h1>Detail Page</h1></div>}/>
+            <Route path='/info' element={<div><h1>Info Page</h1></div>}/>
+            <Route path='/test' element={<div><h1>이곳은 테스트</h1></div>}/>
             <Route path='*' element={<div><h1>잘못된 접근입니다. 경로를 확인하세요.</h1></div>}/>
         </Routes>
 
