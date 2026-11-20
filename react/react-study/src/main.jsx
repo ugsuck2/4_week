@@ -7,15 +7,17 @@ import NewsBlog from './newsblog/NewsBlog.jsx'
 // import Quiz03 from './quiz03/Quiz03.jsx'
 // import Props01 from './components/Props01'
 // import TempApp from './TempApp.jsx'
-import Quiz05 from './quiz/quiz05/Quiz05.jsx'
+// import Quiz05 from './quiz/quiz05/Quiz05.jsx'
 import FoodMarket from './foodmarket/FoodMarket.jsx'
+import Quiz06 from './quiz/quiz06/Quiz06.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <FoodMarket></FoodMarket>
+    {/* <FoodMarket></FoodMarket> */}
     {/* <NewsBlog></NewsBlog> */}
     {/* <Quiz01 /> */}
     {/* <ProductInfo /> */}
     {/* <TempApp /> */}
+    <Quiz06></Quiz06>
   </StrictMode>,
 )

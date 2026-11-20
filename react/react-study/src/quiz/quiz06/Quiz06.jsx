@@ -1,19 +1,19 @@
-import './Quiz05.css'
+import './Quiz06.css'
 import { useState } from 'react';
 import ColorBox from './ColorBox';
 
-function Quiz05(){
+function Quiz06(){
 
     let [boxCount, setBoxCount] = useState(['red','blue','green','black'])
 
-    let boxOrigin = [];
+    // let boxOrigin = [];
 
-    for(let i = 0; i<boxCount.length;i++) {
+    // for(let i = 0; i<boxCount.length;i++) {
         
-        boxOrigin.push(
-            <div key={i} className={`box ${boxCount[i]}`}></div>
-            )
-        }
+    //     boxOrigin.push(
+    //         <div key={i} className={`box ${boxCount[i]}`}></div>
+    //         )
+    //     }
 
     
         
@@ -72,11 +72,17 @@ function Quiz05(){
             <br/>
 
             {
-                boxOrigin
+                boxCount.map((item, index) => {
+                    return (
+                        <ColorBox key={index} bgcolor={item} onDelete={()=>{
+                            setBoxCount(boxCount.filter((_,i)=>i !=index));
+                        }}/>
+                    )
+            })
             }
             
 
-            <h3>색상박스를 컴포넌트화</h3>
+            {/* <h3>색상박스를 컴포넌트화</h3>
             <div>
                 {
                     boxCount.map((item,index)=>{
@@ -88,9 +94,9 @@ function Quiz05(){
                         
                     })
                 }
-            </div>
+            </div> */}
         </div>
     )
 }
 
-export default Quiz05;
+export default Quiz06;
