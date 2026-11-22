@@ -1,0 +1,29 @@
+.movie-card {
+  border-radius: 5px;
+  border: 0.5px solid gray;
+  padding  : 20px;
+  background-color: white;
+
+}
+
+.poster {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 높이 135px, 둥근 모서리, 가운데 정렬, 글자 크기 48px */
+
+.movie-card h3 {
+  font-size: 20px;
+}
+
+.movie-card p {
+  color: gray;
+}
+
